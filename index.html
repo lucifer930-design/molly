@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Специально для тебя Аиша❤️</title>
+    <style>
+        /* Общие стили и анимация плавающего градиентного фона */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(-45deg, #ff758c, #ff7eb3, #a1c4fd, #c2e9fb);
+            background-size: 400% 400%;
+            animation: gradientBG 12s ease infinite;
+            overflow: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Основная карточка */
+        .card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 40px 30px;
+            border-radius: 24px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            position: relative;
+            z-index: 10;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Пульсирующее сердечко */
+        .heart {
+            font-size: 60px;
+            color: #ff3366;
+            animation: pulse 1.2s infinite;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        /* Заголовок и текст */
+        h1 {
+            color: #333;
+            font-size: 26px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        /* Кнопка */
+        .btn {
+            background: linear-gradient(135deg, #ff3366, #ff6b8b);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 51, 102, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 51, 102, 0.6);
+        }
+
+        .btn:active {
+            transform: translateY(1px);
+        }
+
+        /* Скрытое признание, которое появляется по клику (через checkbox хак без JS) */
+        #secret-toggle {
+            display: none;
+        }
+
+        .secret-message {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, opacity 0.5s ease;
+            opacity: 0;
+            color: #ff3366;
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 0;
+        }
+
+        #secret-toggle:checked ~ .secret-message {
+            max-height: 100px;
+            opacity: 1;
+            margin-top: 20px;
+        }
+
+        #secret-toggle:checked ~ .btn {
+            background: #4caf50;
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="heart">❤️</div>
+        <h1>Для самой особенной</h1>
+        <p>Аиша каждый момент проведенный с тобой наполнен смыслом и теплом. Ты самое лучшее, что есть в моей жизни.
+
+            От люцифера
+        </p>
+
+        <!-- Интерактив без JavaScript: используем скрытый чекбокс -->
+        <input type="checkbox" id="secret-toggle">
+        <label for="secret-toggle" class="btn" style="display: inline-block;">Нажми на меня</label>
+        
+        <div class="secret-message">
+            Я безумно обожаю тебя! С тобой весь мир обретает краски. ✨
+        </div>
+    </div>
+
+</body>
+</html>
